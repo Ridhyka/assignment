@@ -94,18 +94,13 @@ http://localhost:3000
 ## 🔍 Additional Features (Bonus Points)
 - ✅ Client-side search and filtering
 - ✅ React Router for navigation
-- ✅ Hosted on a free platform (provide link here)
+
 
 ---
-
-## 📜 Submission Guidelines
-- Upload the project to GitHub.
-- Include a **README.md** (this file).
-- If hosted, provide the live demo link.
 
 ---
 
 ## 📧 Contact
 For any queries, feel free to reach out:
-📩 Email: [your-email@example.com](mailto:your-email@example.com)
-🔗 GitHub: [your-username](https://github.com/your-username)
+📩 Email: [ridhikashekhawat77@gmail.com](mailto:ridhikashekhawat77@gmail.com.com)
+🔗 GitHub: [ridhyka](https://github.com/ridhyka)
