@@ -1,0 +1,68 @@
+/* Common styles for modal components */
+.MuiDialog-paper {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+  
+  .MuiDialogTitle-root {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 16px 24px !important;
+  }
+  
+  .MuiDialogContent-root {
+    padding: 24px !important;
+  }
+  
+  .MuiDialogActions-root {
+    padding: 16px 24px !important;
+    background-color: #f5f5f5;
+  }
+  
+  .modal-avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .modal-form-field {
+    margin-bottom: 16px !important;
+  }
+  
+  .modal-error {
+    margin-bottom: 16px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .MuiDialogTitle-root {
+      padding: 12px 16px !important;
+    }
+    
+    .MuiDialogContent-root {
+      padding: 16px !important;
+    }
+    
+    .MuiDialogActions-root {
+      padding: 12px 16px !important;
+    }
+    
+    .modal-avatar-container {
+      margin-bottom: 16px;
+    }
+    
+    .modal-form-field {
+      margin-bottom: 12px !important;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .MuiDialogContent-root {
+      padding: 12px !important;
+    }
+    
+    .modal-avatar-container img {
+      width: 60px;
+      height: 60px;
+    }
+  }

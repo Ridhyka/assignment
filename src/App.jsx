@@ -1,24 +1,35 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import UsersList from "./components/UsersList";
-import EditUser from "./components/EditUser";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-// import "./styles/styles.css";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import UsersPage from './pages/UsersPage';
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Navbar from './components/Navbar';
+import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="container">
-        <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
-          <Route path="/" element={<Login />} />
-          <Route path="/users" element={<UsersList />} />
-          <Route path="/edit-user/:id" element={<EditUser />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="app-container">
+          <Navbar />
+          <div className="content-container">
+            <Routes>
+              <Route path="/login" element={<LoginPage />} />
+              <Route 
+                path="/users" 
+                element={
+                  <ProtectedRoute>
+                    <UsersPage />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route path="/" element={<Navigate to="/login" replace />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 

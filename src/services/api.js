@@ -2,38 +2,46 @@ import axios from 'axios';
 
 const BASE_URL = 'https://reqres.in/api';
 
-export const loginUser = async (email, password) => {
-  try {
-    const response = await axios.post(`${BASE_URL}/login`, { email, password });
-    return response.data;
-  } catch (error) {
-    throw error.response?.data || 'Login failed';
-  }
+// Create axios instance
+const api = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Add token to requests if available
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+// Authentication
+export const login = (email, password) => {
+  return api.post('/login', { email, password });
 };
 
-export const getUsers = async (page = 1) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/users?page=${page}`);
-    return response.data;
-  } catch (error) {
-    throw error.response?.data || 'Failed to fetch users';
-  }
+// Users
+export const getUsers = (page = 1) => {
+  return api.get(`/users?page=${page}`);
 };
 
-export const updateUser = async (id, userData) => {
-  try {
-    const response = await axios.put(`${BASE_URL}/users/${id}`, userData);
-    return response.data;
-  } catch (error) {
-    throw error.response?.data || 'Failed to update user';
-  }
+export const getUserById = (id) => {
+  return api.get(`/users/${id}`);
 };
 
-export const deleteUser = async (id) => {
-  try {
-    await axios.delete(`${BASE_URL}/users/${id}`);
-    return { success: true };
-  } catch (error) {
-    throw error.response?.data || 'Failed to delete user';
-  }
+export const updateUser = (id, userData) => {
+  return api.put(`/users/${id}`, userData);
 };
+
+export const deleteUser = (id) => {
+  return api.delete(`/users/${id}`);
+};
+
+export default api;
