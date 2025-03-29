@@ -61,6 +61,15 @@ https://reqres.in/
 
 ---
 
+## Screenshots
+
+
+![Users List](public/images/Screenshot (28).png)
+
+
+![Login Page](public/images/Screenshot (29).png)
+
+
 ## ⚙️ Installation & Setup
 ### 1️⃣ Clone the Repository
 ```sh
