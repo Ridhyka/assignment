@@ -64,11 +64,11 @@ https://reqres.in/
 ## Screenshots
  **Users List**  
    
-    <img src="/public/images/Screenshot (28).png" alt="Current Weather and Search Bar" width="800" height="500">
+<img src="/public/images/Screenshot (28).png" alt="Current Weather and Search Bar" width="800" height="500">
 
 **Login Page**  
    
-    <img src="/public/images/Screenshot (29).png" alt="Current Weather and Search Bar" width="800" height="500">
+<img src="/public/images/Screenshot (29).png" alt="Current Weather and Search Bar" width="800" height="500">
 
 ## ⚙️ Installation & Setup
 ### 1️⃣ Clone the Repository
